@@ -1,11 +1,8 @@
-num = int(input("Введіть 4-х значне число: "))
-# Видобути окремі цифри числа та вивести їх в стовпчик
-num1 = num // 1000
-num2 = (num // 100) % 10
-num3 = (num // 10) % 10
-num4 = num % 10
+list1 = [1]
 
-print(num1)
-print(num2)
-print(num3)
-print(num4)
+if list1:
+    last_e = list1.pop()
+    list1.insert(0, last_e)
+
+print(list1)
+
