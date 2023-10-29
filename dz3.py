@@ -1,7 +1,7 @@
 num1 = float(input("Введіть перше число: "))
 operator = input("Введіть операцію (+, -, *, /): ")
 num2 = float(input("Введіть друге число: "))
-
+#//
 if operator == '+':
     result = num1 + num2
     print(f"Результат: {result}")
