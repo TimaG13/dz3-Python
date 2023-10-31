@@ -1,0 +1,8 @@
+# ignore ALL .log files
+*.log
+*.ipynb
+
+# ignore ALL files in ANY directory named temp
+# temp/
+tutorial-env/
+.ipynb_checkpoints/
