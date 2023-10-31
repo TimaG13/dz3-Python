@@ -1,5 +1,3 @@
-num1 = None
-
 while True:
     num1 = input("Введіть перше число: ")
     if num1 != 'y':
