@@ -1,6 +1,4 @@
-import string
-
-# "_" #=> True
+ # "_" #=> True
 # "x" #=> True
 # "get_value" #=> True
 # "get value" #=> False
@@ -11,8 +9,12 @@ import string
 # "getValue" #=> False
 # "3m" #=> False
 # "m3" #=> True
+# "assert" #=> True
+# "and " #=> True
 
-# Введення рядка від користувача
+import keyword
+import string
+
 name_var = input("Введіть назву: ")
 
 # Перевірка, чи починається ім'я змінної з цифри
@@ -21,12 +23,14 @@ if name_var[0].isdigit():
 # Перевірка, чи складається ім'я тільки з цифр
 elif name_var.isdigit():
     print(False)
-# Перевірка, чи містить рядок великі або малі літери, цифри та символ нижнього підкреслення
-elif all(symb.isalnum() or symb == "_" for symb in name_var):
-    # Перевірка, чи всі літери є малими
-    if name_var.islower() or name_var == "_":
-        print(True)
-    else:
-        print(False)
-else:
+# Перевірка, чи містить рядок великі літери, пробіли та знаки пунктуації (окрім нижнього підкреслення "_")
+elif any(symb.isupper() or symb in string.punctuation for symb in name_var if symb != "_"):
     print(False)
+# Перевірка, чи рядок містить лише дозволені символи
+elif not all(symb.isalnum() or symb == "_" for symb in name_var):
+    print(False)
+# чи ім'я не є зарезервованим словом
+elif name_var in keyword.kwlist:
+    print(False)
+else:
+    print(True)
