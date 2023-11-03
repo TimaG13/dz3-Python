@@ -1,7 +1,6 @@
-number = 1
+strin = 'lorem ins pkpp'
 
-def make_negative( number ):
-    pass
+def find_short(s):
+    len(min(s.split(), key=len))
 
-
-make_negative( number )
+find_short(strin)
