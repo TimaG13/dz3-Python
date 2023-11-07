@@ -1,6 +1,11 @@
-strin = 'lorem ins pkpp'
+def factorial(n):
+    result = {}
+    print(sum(map(int, n.split(' '))))
 
-def find_short(s):
-    len(min(s.split(), key=len))
+    return result
 
-find_short(strin)
+user_input = '1 2 3 5'#int(input('Введіть число: '))
+
+factorial(user_input)
+
+
