@@ -11,13 +11,17 @@ class Rectangle:
         return self.get_square() == other.get_square()
 
     def __add__(self, other):
-        total_width = self.width + other.width
-        total_height = self.height + other.height
+        # Знаходимо нові розміри прямокутника, який є сумою двох інших
+        total_width = (self.width * self.height + other.width * other.height) ** 0.5
+        total_height = (self.width * self.height + other.width * other.height) / total_width
         return Rectangle(total_width, total_height)
 
     def __mul__(self, n):
-        new_width = self.width * n
-        new_height = self.height * n
+        # Множимо площу на n
+        new_square = self.get_square() * n
+        # Знаходимо нові розміри прямокутника
+        new_width = (new_square * self.width / self.height) ** 0.5
+        new_height = new_square / new_width
         return Rectangle(new_width, new_height)
 
     def __str__(self):
@@ -37,3 +41,4 @@ r4 = r1 * 4
 assert r4.get_square() == 32, 'Test4'
 
 assert Rectangle(3, 6) == Rectangle(2, 9), 'Test5'
+print('OK')
